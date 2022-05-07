@@ -1,0 +1,45 @@
+<!--- Link: https://github.com/ShashankT1709/javascript-password-generator ---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+</head>
+<body>
+    <button onclick="gfg_Run()">
+        Click Here
+    </button>
+    <br>
+    <div>
+        <p id="PasswordGen"></p>
+    </div>
+    <script>
+        var el_down = document.getElementById("PasswordGen");
+
+            function generateP() {
+            var pass = '';
+            var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 
+                    'abcdefghijklmnopqrstuvwxyz' +
+                    '1234567890' +
+                    '!@#$%&*()';
+              
+            for (let i = 1; i <= 12; i++) {
+                var char = Math.floor(Math.random()
+                            * str.length + 1);
+                  
+                pass += str.charAt(char)
+            }
+              
+            return pass;
+        }
+        // Console Log
+        console.log(generateP())
+
+        function gfg_Run() {
+            el_down.innerHTML = generateP();
+        }
+    </script>
+</body>
+</html>
